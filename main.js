@@ -29,7 +29,9 @@ function printproduct(data){
         productcontainer.innerHTML += `
         <div class="h-fit shadow">
         <div class="bg-gray-400 h-fit">
+        <a href= "./details.html?product_id=${product.id}">
         <img src="${product.thumbnail}" class="h-36 w-full rounded-t" alt="">
+        </a>
         </div>
         <div class="px-2">
             <h3 class=" pt-2 text-left">${product.title}</h3>
@@ -63,3 +65,18 @@ menutoggler.addEventListener("click",()=>{
         menu.style.display = "block"
     }
 })
+
+
+
+// fetch('https://dummyjson.com/products')
+// .then(res => res.json())
+// .then ( (data) => {
+//     products = data.products
+//     printproduct(products)
+// } )
+
+let query = location.search
+
+let params = new URLSearchParams(query);
+
+console.log(params)
